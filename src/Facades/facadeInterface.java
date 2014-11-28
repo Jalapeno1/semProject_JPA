@@ -8,6 +8,6 @@ public interface facadeInterface {
 
     public UserDetails addUserFromGson(String json);
 
-    public UserDetails deleteUser(long id);
+    public UserDetails deleteUser(String userName);
 
 }

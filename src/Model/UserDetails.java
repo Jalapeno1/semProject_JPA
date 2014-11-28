@@ -12,9 +12,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "USERDETAILS")
 @NamedQueries({
-    @NamedQuery(name = "UserDetails.findAll", query = "SELECT c FROM UserDetails c")})
+    @NamedQuery(name = "UserDetails.findAll", query = "SELECT p FROM UserDetails p")})
 public class UserDetails implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
     @Column(name = "USERNAME")
@@ -79,7 +80,7 @@ public class UserDetails implements Serializable {
 
     @Override
     public String toString() {
-        return "model.UserDetails[ Username: " + username + ", Password: " + password + ", Authority: " + authority +" ]";
+        return "UserDetails[ Username: " + username + ", Password: " + password + ", Authority: " + authority +" ]";
     }
     
 }

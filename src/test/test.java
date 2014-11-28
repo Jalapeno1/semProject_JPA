@@ -23,8 +23,13 @@ public class test {
         String username = "JONAS";
 
         UserDetails p = em.find(UserDetails.class, username);
-        //System.out.println("Password: " + p.getPassword());
-
-        System.out.println("Person: " + p);
+        
+        if(p==null){
+            System.out.println("NULL returned - ERROR");
+        } else {
+            System.out.println("Password: " + p.getPassword());
+            System.out.println("Person: " + p.getUsername());
+            System.out.println("Auth: " + p.getAuthority());
+        }
     }
 }

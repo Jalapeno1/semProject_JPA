@@ -47,9 +47,9 @@ public class Facade implements facadeInterface {
 
     //Delete a person.
     @Override
-    public UserDetails deleteUser(long id) {
+    public UserDetails deleteUser(String userName) {
         em.getTransaction().begin();
-        UserDetails p = em.find(UserDetails.class, id);
+        UserDetails p = em.find(UserDetails.class, userName);
         em.remove(p);
         em.getTransaction().commit();
         return p;

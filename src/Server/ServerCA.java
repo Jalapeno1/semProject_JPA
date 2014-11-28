@@ -118,10 +118,10 @@ public class ServerCA {
                         String path = he.getRequestURI().getPath();
                         int lastIndex = path.lastIndexOf("/");
                         if (lastIndex > 0) {  //person/id
-                            String idStr = path.substring(lastIndex + 1);
-                            Long id = Long.valueOf(idStr);
+                            String userStr = path.substring(lastIndex + 1);
+                            String userName = String.valueOf(userStr);
 
-                            UserDetails pDeleted = facade.deleteUser(id);
+                            UserDetails pDeleted = facade.deleteUser(userName);
 
                             response = new Gson().toJson(pDeleted);
                         } else {
