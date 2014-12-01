@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 function addPerson() {
     //Method to add a new person. Is used on the "Add new Person" button in the index.html.
@@ -38,7 +33,6 @@ function addRoletoPerson() {
         url: "http://127.0.0.1:8080/login/" + userName,
         type: "GET",
         data: dataString
-
     })
 
 }
