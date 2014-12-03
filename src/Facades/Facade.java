@@ -29,6 +29,7 @@ public class Facade implements facadeInterface {
     }
 
     //Method to retrieve user based upon username.
+    // URL: /login/USERNAME
     @Override
     public String getUserAsJson(String username) {
         UserDetails p = em.find(UserDetails.class, username);
@@ -36,6 +37,7 @@ public class Facade implements facadeInterface {
     }
 
     //Adds a new user to the database.
+    // URL: /login; Format: {"username":"ex","password":"TEST","authority":"ADMIN"}
     @Override
     public UserDetails addUserFromGson(String json) {
         em.getTransaction().begin();
@@ -46,6 +48,7 @@ public class Facade implements facadeInterface {
     }
 
     //Delete a user.
+    // URL: /login/USERNAME
     @Override
     public UserDetails deleteUser(String userName) {
         em.getTransaction().begin();

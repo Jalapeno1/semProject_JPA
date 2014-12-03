@@ -12,7 +12,7 @@ public class test {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA_Persistance");
         EntityManager em = emf.createEntityManager();
 
-        String username = "JONAS";
+        String username = "SOREN";
 
         UserDetails p = em.find(UserDetails.class, username);
         
@@ -22,6 +22,7 @@ public class test {
             System.out.println("Password: " + p.getPassword());
             System.out.println("Person: " + p.getUsername());
             System.out.println("Auth: " + p.getAuthority());
+            System.out.println(p);
         }
     }
 }

@@ -100,6 +100,7 @@ public class ServerCA {
                             //Simple anti-Martin check :-)
                             throw new IllegalArgumentException("Illegal characters in input");
                         }
+                        System.out.println("POST:" + jsonQuery);
                         UserDetails c = facade.addUserFromGson(jsonQuery);
 
                         response = new Gson().toJson(c);
@@ -120,7 +121,7 @@ public class ServerCA {
                         if (lastIndex > 0) {  //person/id
                             String userStr = path.substring(lastIndex + 1);
                             String userName = String.valueOf(userStr);
-
+                            System.out.println("DELETE: "+userName);
                             UserDetails pDeleted = facade.deleteUser(userName);
 
                             response = new Gson().toJson(pDeleted);
