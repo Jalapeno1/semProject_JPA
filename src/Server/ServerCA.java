@@ -135,7 +135,12 @@ public class ServerCA {
                     }
                     break;
             }
-            he.getResponseHeaders().add("Content-Type", "application/json");
+            Headers h = he.getResponseHeaders();
+            h.add("Content-Type", "application/json");
+            h.add("Access-Control-Allow-Origin", "*");
+            h.add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+            h.add("Access-Control-Allow-Headers", "Content-Type, Accept");
+            
             he.sendResponseHeaders(statusCode, 0);
             try (OutputStream os = he.getResponseBody()) {
                 os.write(response.getBytes());
